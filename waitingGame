@@ -1,0 +1,32 @@
+'''
+Creating games is a fun way to practice programming, so that's what we'll do for this challenge.
+Your goal is to write a Python function to play a pulse pounding game of patience I call The Waiting Game.
+When the player runs your Waiting Game program, it should print a message for them to wait a random amount of time,
+somewhere between two to four seconds. When the player presses Enter, that starts a timer. The player's goal
+is to wait the specified number of seconds and then press Enter again. That displays the elapsed time,
+along with a message about whether the player was too fast, too slow, or right on target.
+'''
+import time
+import random
+
+
+def waiting_game():
+    target = random.randint(2, 4)
+    print("Your target time is {0} seconds".format(target))
+
+    input(' ---Press Enter to Begin--- ')
+    start = time.perf_counter()
+
+    input("\n...Press Enter again after {} seconds".format(target))
+    elapsed = time.perf_counter() - start
+
+    print('\nElapsed time: {0:.3f} seconds'.format(elapsed))
+    if elapsed == target:
+        print('(Unbelievable !! Perfect timing)')
+    elif elapsed < target:
+        print('({0:.3f} seconds too fast)'.format(target-elapsed))
+    else:
+        print('({0:.3f} seconds too slow)'.format(elapsed - target))
+
+
+waiting_game()
