@@ -1,3 +1,6 @@
+# links: https://www.pythonforbeginners.com/basics/how-to-use-the-platform-module-in-python
+#  https://docs.python.org/3/library/platform.html
+
 import platform
 
 
