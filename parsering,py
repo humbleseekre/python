@@ -1,0 +1,26 @@
+#from https://docs.python.org/3/library/argparse.html
+
+import argparse
+
+def sum(num1, num2):
+    print("the sum of two nums is {}".format(num1 + num2))
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Add two numbers", prog='test.py')
+    parser.add_argument('x', type=int)
+    parser.add_argument('y',  type=int)
+    args = parser.parse_args()
+    sum(args.x, args.y)
+    
+
+#Above file usage:
+#test.py 1 2
+#the sum of two nums is 3
+#(venv) (base) Nilendras-MBP:test_python neil$ python3 test.py -x 1 -y 2
+#when:
+ #   parser.add_argument('-x', type=int)
+ #   parser.add_argument('-y',  type=int)
+#usage: test.py [-h] -x -y
+#(venv) (base) Nilendras-MBP:test_python neil$ python3 test.py -x 1 -y 2
+#the sum of two nums is 3
+
