@@ -6,7 +6,8 @@ If you want just files, you could either filter this down using os.path:
 from os import listdir
 from os.path import isfile, join
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-or you could use os.walk() which will yield two lists for each directory it visits - splitting into files and dirs for you. If you only want the top directory you can just break the first time it yields
+or you could use os.walk() which will yield two lists for each directory it visits - splitting into files and dirs for you. If you only want the top 
+directory you can just break the first time it yields
 
 from os import walk
 
@@ -20,7 +21,9 @@ Get a list of files with Python 2 and 3
 os.listdir()
 How to get all the files (and directories) in the current directory (Python 3)
 
-Following, are simple methods to retrieve only files in the current directory, using os and the listdir() function, in Python 3. Further exploration, will demonstrate how to return folders in the directory, but you will not have the file in the subdirectory, for that you can use walk - discussed later).
+Following, are simple methods to retrieve only files in the current directory, using os and the listdir() function, in Python 3. Further exploration, 
+will demonstrate how to return folders in the directory, but you will not have the file in the subdirectory, for that you can use walk - discussed 
+later).
 
  import os
  arr = os.listdir()
@@ -78,7 +81,9 @@ output
 example    found => []
 .py        found => ['search.py']
 Getting the full path name with os.path.abspath
-As you noticed, you don't have the full path of the file in the code above. If you need to have the absolute path, you can use another function of the os.path module called _getfullpathname, putting the file that you get from os.listdir() as an argument. There are other ways to have the full path, as we will check later (I replaced, as suggested by mexmex, _getfullpathname with abspath).
+As you noticed, you don't have the full path of the file in the code above. If you need to have the absolute path, you can use another function of the 
+os.path module called _getfullpathname, putting the file that you get from os.listdir() as an argument. There are other ways to have the full path, as 
+we will check later (I replaced, as suggested by mexmex, _getfullpathname with abspath).
 
  import os
  files_path = [os.path.abspath(x) for x in os.listdir()]
@@ -383,7 +388,8 @@ searchfiles('.png', 'H:\\')
 >>> H:\7z001.png
 >>> H:\7z002.png
 (New) Find all files and open them with tkinter GUI
-I just wanted to add in this 2019 a little app to search for all files in a dir and be able to open them by doubleclicking on the name of the file in the list. enter image description here
+I just wanted to add in this 2019 a little app to search for all files in a dir and be able to open them by doubleclicking on the name of the file in 
+the list. enter image description here
 
 import tkinter as tk
 import os
