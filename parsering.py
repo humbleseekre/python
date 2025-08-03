@@ -39,3 +39,47 @@ if __name__ == '__main__':
 #(venv) (base) Nilendras-MBP:test_python neil$ python3 test.py -x 1 -y 2
 #the sum of two nums is 3
 
+In the Python `argparse` module, the `action` parameter in `add_argument()` **specifies what should be done when the argument is encountered on the command line**.
+
+---
+
+### 🔍 Your line:
+
+```python
+args.add_argument("--is_student", "-is", action="store_true", help="Is the primary user a student?")
+```
+
+### ✅ What `action="store_true"` does:
+
+* It **stores `True`** if the flag (`--is_student` or `-is`) is **present** in the command line.
+* It **stores `False`** if the flag is **not present**.
+
+### Example:
+
+```bash
+python script.py --is_student
+```
+
+In your Python script:
+
+```python
+print(args.is_student)  # True
+```
+
+```bash
+python script.py
+```
+
+```python
+print(args.is_student)  # False
+```
+
+---
+
+### 🧠 Why use it?
+
+It’s useful for **boolean flags** where presence means **yes/true**, and absence means **no/false**—like `--verbose`, `--debug`, or `--is_student`.
+
+Let me know if you want the equivalent for storing `False` (i.e. `store_false`).
+
+
